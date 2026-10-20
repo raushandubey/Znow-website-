@@ -94,41 +94,40 @@
   <!-- ========================================== -->
   <header class="relative bg-[#4cc5fd] pt-8 sm:pt-12 md:pt-14 pb-0 overflow-hidden text-center">
     
-    <div class="max-w-6xl mx-auto px-4 relative z-10 flex flex-col items-center">
+    <div class="max-w-6xl mx-auto px-4 relative z-20 flex flex-col items-center">
       
       <!-- Single Znow Brand Logo (Clean & Centered) -->
-      <a href="/" class="inline-block transition-transform duration-200 hover:scale-105 mb-3 sm:mb-4">
+      <a href="/" class="inline-block transition-transform duration-200 hover:scale-105 mb-2 sm:mb-3 relative z-30">
         <img src="assets/znow_logo_transparent.png" alt="Znow Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
       </a>
 
-      <!-- Headline -->
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-black tracking-tight mb-6 sm:mb-10">
+      <!-- Headline: Solid Black & Extra Bold as in Figma -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-neutral-900 tracking-tight mb-4 sm:mb-6 relative z-30">
         India’s Coffee App
       </h1>
 
       <!-- Semicircular Skyline & Phone Mockup Container -->
       <div class="relative w-full max-w-4xl flex justify-center items-center">
         
-        <!-- Clean City Skyline Arc Background (NO duplicate logo) -->
-        <div class="absolute -top-12 sm:-top-20 md:-top-24 w-[130%] max-w-5xl pointer-events-none select-none z-0">
-          <img src="assets/skyline_clean.png" alt="City Skyline Background" class="w-full h-auto object-contain opacity-95">
+        <!-- Clean City Skyline Arc Background -->
+        <div class="absolute -top-10 sm:-top-16 md:-top-20 w-[130%] max-w-5xl pointer-events-none select-none z-10">
+          <img src="assets/skyline_clean.png" alt="City Skyline Background" class="w-full h-auto object-contain">
         </div>
 
         <!-- Phone Device Mockup Container -->
-        <div class="relative z-10 mt-6 sm:mt-8 md:mt-10 flex flex-col items-center">
+        <div class="relative z-20 mt-4 sm:mt-6 md:mt-8 flex flex-col items-center">
           
-          <!-- Smartphone Outer Bezel Frame -->
-          <div class="relative w-[280px] xs:w-[320px] sm:w-[360px] md:w-[385px] bg-white rounded-[40px] sm:rounded-[46px] border-[5px] sm:border-[6px] border-black overflow-hidden phone-shadow">
+          <!-- Smartphone Outer White Bezel Frame (Matches Figma Hero) -->
+          <div class="relative w-[280px] xs:w-[320px] sm:w-[360px] md:w-[390px] bg-white rounded-[38px] sm:rounded-[46px] p-2.5 sm:p-3 shadow-2xl border border-neutral-100/80 overflow-hidden">
             
-            <!-- Dynamic Island Speaker Bar -->
-            <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-4 sm:h-4.5 bg-black rounded-full z-30"></div>
-
-            <!-- In-App Screen Content (Frame 794) -->
-            <img src="assets/mobile_app_screen.png" alt="Znow Coffee In-App Screen" class="w-full h-auto block select-none">
+            <div class="relative rounded-[28px] sm:rounded-[36px] overflow-hidden">
+              <!-- In-App Screen Content (Frame 794) -->
+              <img src="assets/mobile_app_screen.png" alt="Znow Coffee In-App Screen" class="w-full h-auto block select-none">
+            </div>
           </div>
 
           <!-- Striped Awning Extends Over the Phone Base into Next Section -->
-          <div class="relative -mt-10 sm:-mt-14 md:-mt-16 w-[340px] xs:w-[390px] sm:w-[460px] md:w-[520px] z-20 pointer-events-none">
+          <div class="relative -mt-8 sm:-mt-12 md:-mt-14 w-[340px] xs:w-[390px] sm:w-[460px] md:w-[520px] z-30 pointer-events-none">
             <img src="assets/awning.png" alt="Cafe Awning" class="w-full h-auto object-contain drop-shadow-xl">
           </div>
 
@@ -189,32 +188,32 @@
       </h2>
 
       <!-- Desktop/Tablet Layout: Rider on Left, Button in Center, Door on Right -->
-      <div class="hidden md:flex relative items-center justify-between gap-6 max-w-4xl mx-auto">
-        <!-- Left: Rider on Scooter -->
-        <div class="w-64 lg:w-72 flex justify-center transform hover:-translate-x-2 transition duration-300">
+      <div class="hidden md:flex relative items-center justify-between gap-6 max-w-5xl mx-auto pt-4">
+        <!-- Left: Rider on Scooter (Scale up to match Figma) -->
+        <div class="w-72 md:w-80 lg:w-[350px] flex justify-center transform hover:-translate-x-2 transition duration-300">
           <img src="assets/rider.png" alt="Znow Delivery Partner on Scooter" class="w-full h-auto object-contain drop-shadow-md">
         </div>
 
         <!-- Center: CTA Button -->
         <div class="z-10 flex flex-col items-center">
-          <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition-all duration-200 px-9 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl">
+          <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition-all duration-200 px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl">
             Get the app
           </button>
         </div>
 
-        <!-- Right: Arched Door -->
-        <div class="w-48 lg:w-56 flex justify-center transform hover:translate-x-1 transition duration-300">
+        <!-- Right: Arched Door (Scale up to match Figma) -->
+        <div class="w-56 md:w-64 lg:w-[280px] flex justify-center transform hover:translate-x-1 transition duration-300">
           <img src="assets/door_transparent.png" alt="Doorstep" class="w-full h-auto object-contain drop-shadow-md">
         </div>
       </div>
 
       <!-- Mobile Layout (Matches Figma mobile_sec_2.png): Button directly below Title, then Rider underneath -->
-      <div class="flex md:hidden flex-col items-center gap-6">
+      <div class="flex md:hidden flex-col items-center gap-6 pt-2">
         <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition-all duration-200 px-8 py-3.5 rounded-full font-bold text-base shadow-xl">
           Get the app
         </button>
-        <div class="w-56 xs:w-64 mt-2">
-          <img src="assets/rider.png" alt="Znow Delivery Partner on Scooter" class="w-full h-auto object-contain drop-shadow-md">
+        <div class="w-72 xs:w-80 max-w-[320px] mt-2">
+          <img src="assets/rider.png" alt="Znow Delivery Partner on Scooter" class="w-full h-auto object-contain drop-shadow-md mx-auto">
         </div>
       </div>
 
@@ -343,11 +342,11 @@
 
       <!-- MOBILE Center Feature Card (Matches Figma mobile_sec_3.png) -->
       <div class="flex sm:hidden justify-center">
-        <div class="w-full max-w-[270px] bg-white border-2 border-black rounded-3xl p-6 shadow-md flex flex-col items-center">
-          <h3 class="font-bold text-lg text-black mb-1">Redeem</h3>
-          <h3 class="font-extrabold text-xl text-black mb-4">FREE coffee</h3>
-          <img src="assets/coffee_cup_latte.png" alt="Free Coffee Cup" class="w-24 h-24 object-contain mb-4 drop-shadow-sm">
-          <p class="text-sm font-semibold text-neutral-700">with 50 Super Beans</p>
+        <div class="w-full max-w-[260px] bg-white border-2 border-black rounded-[32px] py-8 px-6 shadow-sm flex flex-col items-center">
+          <h3 class="font-bold text-base text-black leading-tight">Redeem a</h3>
+          <h3 class="font-black text-2xl text-black tracking-tight mb-6">FREE coffee</h3>
+          <img src="assets/coffee_cup_latte.png" alt="Free Coffee Cup" class="w-24 h-24 object-contain mb-6">
+          <p class="text-sm font-semibold text-neutral-800">with 50 Super Beans</p>
         </div>
       </div>
 
@@ -371,26 +370,26 @@
       </p>
 
       <!-- DESKTOP / TABLET POLAROID GRID (4 in a Row) -->
-      <div class="hidden sm:grid sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto items-center">
+      <div class="hidden sm:grid sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto items-center">
         
         <!-- Polaroid 1: For slow mornings (Cappuccino) -->
         <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform -rotate-2 hover:rotate-0">
-          <img src="assets/polaroid_1.png" alt="For slow mornings - Cappuccino ₹149" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+          <img src="assets/polaroid_1.png" alt="For slow mornings - Cappuccino ₹149" class="w-full max-w-[275px] h-auto object-contain drop-shadow-xl">
         </div>
 
         <!-- Polaroid 2: For a little treat (Affogato) -->
         <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform rotate-1.5 hover:rotate-0">
-          <img src="assets/polaroid_2.png" alt="For a little treat - Affogato ₹169" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+          <img src="assets/polaroid_2.png" alt="For a little treat - Affogato ₹169" class="w-full max-w-[275px] h-auto object-contain drop-shadow-xl">
         </div>
 
         <!-- Polaroid 3: For hot afternoons (Classic cold coffee) -->
         <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform -rotate-1 hover:rotate-0">
-          <img src="assets/polaroid_3.png" alt="For hot afternoons - Classic cold coffee ₹139" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+          <img src="assets/polaroid_3.png" alt="For hot afternoons - Classic cold coffee ₹139" class="w-full max-w-[275px] h-auto object-contain drop-shadow-xl">
         </div>
 
         <!-- Polaroid 4: For deadline days (Espresso) -->
         <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform rotate-2.5 hover:rotate-0">
-          <img src="assets/polaroid_4.png" alt="For deadline days - Espresso ₹79" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+          <img src="assets/polaroid_4.png" alt="For deadline days - Espresso ₹79" class="w-full max-w-[275px] h-auto object-contain drop-shadow-xl">
         </div>
 
       </div>
@@ -425,12 +424,12 @@
     <div class="max-w-5xl mx-auto px-4">
       
       <!-- DESKTOP / TABLET (Side-by-side with large QR device card) -->
-      <div class="hidden sm:flex flex-row items-center justify-between gap-10 md:gap-14">
+      <div class="hidden sm:flex flex-row items-center justify-between gap-10 md:gap-14 max-w-6xl mx-auto">
         
         <!-- Left: Copy & Store Buttons -->
         <div class="w-1/2 text-left">
           <h2 class="text-4xl md:text-5xl font-extrabold text-black tracking-tight leading-tight mb-4">
-            Your coffee is<br>one tap away.
+            Your coffee is one tap away.
           </h2>
           <p class="text-xl text-neutral-800 font-medium mb-8">
             Get the znow app and say hello to coffee.
@@ -448,7 +447,7 @@
 
         <!-- Right: QR Code Phone Card -->
         <div class="w-1/2 flex justify-end">
-          <div class="w-full max-w-[280px] md:max-w-[300px] transform hover:scale-105 transition-transform duration-300">
+          <div class="w-full max-w-[340px] md:max-w-[370px] transform hover:scale-105 transition-transform duration-300">
             <img src="assets/qr_card_transparent.png" alt="Scan QR code to get the Znow App" class="w-full h-auto object-contain drop-shadow-2xl">
           </div>
         </div>
@@ -562,8 +561,13 @@
 
       <!-- Legal Disclaimer -->
       <div class="border-t border-black/25 pt-6 sm:pt-8 text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal">
-        <p class="max-w-4xl">
+        <!-- Desktop / Tablet: Full Legal Statement -->
+        <p class="hidden sm:block max-w-4xl">
           By continuing past this page, you agree to our Terms of service, Cookie policy, Privacy policy and Content policies. All trademarks are properties of their respective owners. 2026 &copy; Znow Limited. All rights reserved
+        </p>
+        <!-- Mobile: Clean Single Line (Matches Figma mobile) -->
+        <p class="block sm:hidden text-center text-xs text-neutral-800 font-medium">
+          2026 &copy; Znow Limited. All rights reserved
         </p>
       </div>
 
