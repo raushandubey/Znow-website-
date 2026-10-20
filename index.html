@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Znow - India's Coffee App | Delivered in 10 Minutes</title>
+  <meta name="description" content="India's fastest 10-minute coffee delivery app. Freshly brewed hot, cold, and flavored coffees delivered right to your doorstep.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/znow_logo_transparent.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            znow: {
+              sky: '#4cc5fd',
+              skyLight: '#85c5e4',
+              skyPale: '#e8f6fd',
+              blue: '#2d9cdb',
+              dark: '#111827',
+            }
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'float-delayed': 'float 7s ease-in-out 2s infinite',
+            'float-alt': 'floatAlt 8s ease-in-out 1s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-14px) rotate(6deg)' },
+            },
+            floatAlt: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-10px) rotate(-6deg)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .phone-shadow {
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .coffee-bean {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #85c5e4;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4cc5fd;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- ========================================== -->
+  <!-- 1. HERO SECTION                            -->
+  <!-- ========================================== -->
+  <header class="relative bg-[#4cc5fd] pt-8 sm:pt-12 md:pt-14 pb-0 overflow-hidden text-center">
+    
+    <div class="max-w-6xl mx-auto px-4 relative z-10 flex flex-col items-center">
+      
+      <!-- Single Znow Brand Logo (Clean & Centered) -->
+      <a href="/" class="inline-block transition-transform duration-200 hover:scale-105 mb-3 sm:mb-4">
+        <img src="assets/znow_logo_transparent.png" alt="Znow Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
+      </a>
+
+      <!-- Headline -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-black tracking-tight mb-6 sm:mb-10">
+        India’s Coffee App
+      </h1>
+
+      <!-- Semicircular Skyline & Phone Mockup Container -->
+      <div class="relative w-full max-w-4xl flex justify-center items-center">
+        
+        <!-- Clean City Skyline Arc Background (NO duplicate logo) -->
+        <div class="absolute -top-12 sm:-top-20 md:-top-24 w-[130%] max-w-5xl pointer-events-none select-none z-0">
+          <img src="assets/skyline_clean.png" alt="City Skyline Background" class="w-full h-auto object-contain opacity-95">
+        </div>
+
+        <!-- Phone Device Mockup Container -->
+        <div class="relative z-10 mt-6 sm:mt-8 md:mt-10 flex flex-col items-center">
+          
+          <!-- Smartphone Outer Bezel Frame -->
+          <div class="relative w-[280px] xs:w-[320px] sm:w-[360px] md:w-[385px] bg-white rounded-[40px] sm:rounded-[46px] border-[5px] sm:border-[6px] border-black overflow-hidden phone-shadow">
+            
+            <!-- Dynamic Island Speaker Bar -->
+            <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-4 sm:h-4.5 bg-black rounded-full z-30"></div>
+
+            <!-- In-App Screen Content (Frame 794) -->
+            <img src="assets/mobile_app_screen.png" alt="Znow Coffee In-App Screen" class="w-full h-auto block select-none">
+          </div>
+
+          <!-- Striped Awning Extends Over the Phone Base into Next Section -->
+          <div class="relative -mt-10 sm:-mt-14 md:-mt-16 w-[340px] xs:w-[390px] sm:w-[460px] md:w-[520px] z-20 pointer-events-none">
+            <img src="assets/awning.png" alt="Cafe Awning" class="w-full h-auto object-contain drop-shadow-xl">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. CLOUD CAFE LOCATION SECTION             -->
+  <!-- ========================================== -->
+  <section class="bg-white pt-10 sm:pt-14 md:pt-16 pb-12 sm:pb-16 text-center relative z-20">
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <!-- Headline -->
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-black tracking-tight mb-3 sm:mb-4">
+        Live in Koramangala Bengaluru.
+      </h2>
+      
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-neutral-800 font-medium max-w-xl mx-auto mb-6 sm:mb-8">
+        Our first Cloud Cafe is open, and it’s brewing for the whole neighbourhood.
+      </p>
+
+      <!-- Pill Location Badge -->
+      <div class="inline-flex items-center gap-2 bg-black text-white px-7 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:bg-neutral-800 transition transform hover:-translate-y-0.5 cursor-pointer" onclick="openDownloadModal()">
+        <!-- Pin Icon -->
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>Koramangala</span>
+      </div>
+
+      <!-- Honeycomb Grid Network Map -->
+      <div class="mt-8 sm:mt-12 max-w-3xl mx-auto flex justify-center">
+        <div class="relative w-full rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-sm">
+          <img src="assets/honeycomb_bg.png" alt="Cloud Cafe Hexagon Grid Network" class="w-full h-auto object-contain mx-auto">
+        </div>
+      </div>
+
+      <!-- Coming Soon Caption -->
+      <p class="mt-6 sm:mt-8 text-neutral-600 font-semibold text-sm sm:text-base">
+        More areas coming soon.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. DOORSTEP DELIVERY SECTION               -->
+  <!-- ========================================== -->
+  <section class="bg-white py-12 sm:py-16 md:py-20 text-center relative overflow-hidden border-t border-neutral-100">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <!-- Headline with Exact 3-line / 2-line break -->
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-black tracking-tight leading-tight max-w-2xl mx-auto mb-6 sm:mb-10">
+        Get your Coffee Delivered<br>at your doorstep<br class="hidden sm:inline"> in minutes
+      </h2>
+
+      <!-- Desktop/Tablet Layout: Rider on Left, Button in Center, Door on Right -->
+      <div class="hidden md:flex relative items-center justify-between gap-6 max-w-4xl mx-auto">
+        <!-- Left: Rider on Scooter -->
+        <div class="w-64 lg:w-72 flex justify-center transform hover:-translate-x-2 transition duration-300">
+          <img src="assets/rider.png" alt="Znow Delivery Partner on Scooter" class="w-full h-auto object-contain drop-shadow-md">
+        </div>
+
+        <!-- Center: CTA Button -->
+        <div class="z-10 flex flex-col items-center">
+          <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition-all duration-200 px-9 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl">
+            Get the app
+          </button>
+        </div>
+
+        <!-- Right: Arched Door -->
+        <div class="w-48 lg:w-56 flex justify-center transform hover:translate-x-1 transition duration-300">
+          <img src="assets/door_transparent.png" alt="Doorstep" class="w-full h-auto object-contain drop-shadow-md">
+        </div>
+      </div>
+
+      <!-- Mobile Layout (Matches Figma mobile_sec_2.png): Button directly below Title, then Rider underneath -->
+      <div class="flex md:hidden flex-col items-center gap-6">
+        <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition-all duration-200 px-8 py-3.5 rounded-full font-bold text-base shadow-xl">
+          Get the app
+        </button>
+        <div class="w-56 xs:w-64 mt-2">
+          <img src="assets/rider.png" alt="Znow Delivery Partner on Scooter" class="w-full h-auto object-contain drop-shadow-md">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. DAILY COFFEE SUBSCRIPTION SECTION       -->
+  <!-- ========================================== -->
+  <section class="bg-white py-14 sm:py-20 md:py-24 relative overflow-hidden border-t border-neutral-100">
+    <div class="max-w-6xl mx-auto px-4">
+      
+      <!-- DESKTOP / TABLET (Side-by-Side: Phone Mockup on Left, Heading + Timeline on Right) -->
+      <div class="hidden lg:flex items-center justify-center gap-12 xl:gap-16">
+        
+        <!-- Left: Subscription Phone Frame Mockup -->
+        <div class="w-full max-w-[340px] xl:max-w-[365px] flex-shrink-0">
+          <div class="relative bg-white rounded-[40px] border-[5px] border-black overflow-hidden phone-shadow p-0">
+            <img src="assets/subscription_screen.png" alt="Get Delivered Daily Subscription UI" class="w-full h-auto block select-none">
+          </div>
+        </div>
+
+        <!-- Right: Headline, Subtitle, and Timeline with Weekday circles & Coffee Cup -->
+        <div class="w-full max-w-xl flex flex-col items-start text-left">
+          <h2 class="text-4xl xl:text-5xl font-extrabold text-black tracking-tight mb-3">
+            Get Daily Coffee
+          </h2>
+          <p class="text-xl text-neutral-800 font-medium mb-6">
+            At your same time delivered at your doorstep
+          </p>
+
+          <!-- Timeline graphic from artboard (Contains 'Get the app', M-T-W-T-F-S-S line, and cup) -->
+          <div class="w-full -ml-8 transition-transform duration-300 hover:scale-[1.02] cursor-pointer" onclick="openDownloadModal()">
+            <img src="assets/timeline_complete.png" alt="Daily Delivery Timeline Curve" class="w-full h-auto object-contain">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MOBILE LAYOUT (Matches Figma mobile_sec_3.png): Title -> Subtitle -> Button -> Phone Mockup -->
+      <div class="flex lg:hidden flex-col items-center text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-2">
+          Get Daily Coffee
+        </h2>
+        <p class="text-base sm:text-lg text-neutral-800 font-medium max-w-md mx-auto mb-6">
+          At your same time delivered at your doorstep
+        </p>
+        <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition px-8 py-3.5 rounded-full font-bold text-base shadow-lg mb-8">
+          Get the app
+        </button>
+
+        <!-- Subscription Phone Frame Mockup on Mobile -->
+        <div class="w-full max-w-[290px] xs:max-w-[320px]">
+          <div class="relative bg-white rounded-[36px] border-[5px] border-black overflow-hidden phone-shadow p-0">
+            <img src="assets/subscription_screen.png" alt="Get Delivered Daily Subscription UI" class="w-full h-auto block select-none">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. COLLECT SUPER BEANS SECTION             -->
+  <!-- ========================================== -->
+  <section class="bg-white py-14 sm:py-20 md:py-24 relative overflow-hidden border-t border-neutral-100 text-center">
+    
+    <!-- Floating Background Coffee Beans Animation -->
+    <div class="absolute inset-0 pointer-events-none select-none z-0">
+      <div class="coffee-bean top-12 left-[10%] animate-float-slow">
+        <svg class="w-8 h-8 text-[#543b2b]" viewBox="0 0 40 40" fill="none">
+          <ellipse cx="20" cy="20" rx="14" ry="9" transform="rotate(-30 20 20)" fill="#ece3d9" stroke="#543b2b" stroke-width="2.5"/>
+          <path d="M12 24C16 23 20 17 28 16" stroke="#543b2b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="coffee-bean top-24 right-[12%] animate-float-delayed">
+        <svg class="w-9 h-9 text-[#543b2b]" viewBox="0 0 40 40" fill="none">
+          <ellipse cx="20" cy="20" rx="14" ry="9" transform="rotate(45 20 20)" fill="#ece3d9" stroke="#543b2b" stroke-width="2.5"/>
+          <path d="M14 15C18 19 22 21 26 25" stroke="#543b2b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="coffee-bean bottom-16 left-[15%] animate-float-delayed">
+        <svg class="w-7 h-7 text-[#543b2b]" viewBox="0 0 40 40" fill="none">
+          <ellipse cx="20" cy="20" rx="14" ry="9" transform="rotate(20 20 20)" fill="#ece3d9" stroke="#543b2b" stroke-width="2.5"/>
+          <path d="M13 23C17 22 21 18 27 17" stroke="#543b2b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="coffee-bean bottom-20 right-[18%] animate-float-slow">
+        <svg class="w-8 h-8 text-[#543b2b]" viewBox="0 0 40 40" fill="none">
+          <ellipse cx="20" cy="20" rx="14" ry="9" transform="rotate(-50 20 20)" fill="#ece3d9" stroke="#543b2b" stroke-width="2.5"/>
+          <path d="M16 13C17 19 21 21 24 27" stroke="#543b2b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 relative z-10">
+      
+      <!-- Headline -->
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-black tracking-tight mb-3">
+        Collect Super Beans
+      </h2>
+
+      <!-- Subtitle: Desktop -->
+      <p class="hidden sm:block text-lg sm:text-xl text-neutral-800 font-medium max-w-xl mx-auto mb-10">
+        Sign up, order, collect. Then enjoy a coffee on us.
+      </p>
+
+      <!-- Subtitle: Mobile (Exact match to Figma: "Get uoto 20 Super Beans on sign up") -->
+      <p class="block sm:hidden text-base text-neutral-800 font-medium max-w-sm mx-auto mb-6">
+        Get uoto 20 Super Beans on sign up
+      </p>
+
+      <!-- Mobile CTA Button -->
+      <div class="block sm:hidden mb-8">
+        <button onclick="openDownloadModal()" class="bg-black text-white hover:bg-neutral-800 active:scale-95 transition px-8 py-3.5 rounded-full font-bold text-base shadow-lg">
+          Get the app
+        </button>
+      </div>
+
+      <!-- DESKTOP Diagram (Cards: Up to 20, +4, Center Cup, 99 beans) -->
+      <div class="hidden sm:flex max-w-4xl mx-auto justify-center">
+        <div class="relative w-full rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.01]">
+          <img src="assets/superbeans_diagram.png" alt="Super Beans Reward System Diagram" class="w-full h-auto object-contain mx-auto">
+        </div>
+      </div>
+
+      <!-- MOBILE Center Feature Card (Matches Figma mobile_sec_3.png) -->
+      <div class="flex sm:hidden justify-center">
+        <div class="w-full max-w-[270px] bg-white border-2 border-black rounded-3xl p-6 shadow-md flex flex-col items-center">
+          <h3 class="font-bold text-lg text-black mb-1">Redeem</h3>
+          <h3 class="font-extrabold text-xl text-black mb-4">FREE coffee</h3>
+          <img src="assets/coffee_cup_latte.png" alt="Free Coffee Cup" class="w-24 h-24 object-contain mb-4 drop-shadow-sm">
+          <p class="text-sm font-semibold text-neutral-700">with 50 Super Beans</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. WHAT'S BREWING (POLAROID SHOWCASE)      -->
+  <!-- ========================================== -->
+  <section class="bg-white py-14 sm:py-20 md:py-24 text-center border-t border-neutral-100">
+    <div class="max-w-6xl mx-auto px-4">
+      
+      <!-- Headline -->
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-black tracking-tight mb-2 sm:mb-3">
+        What’s brewing
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-neutral-700 font-medium mb-10 sm:mb-16">
+        Pick your mood, find your brew.
+      </p>
+
+      <!-- DESKTOP / TABLET POLAROID GRID (4 in a Row) -->
+      <div class="hidden sm:grid sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto items-center">
+        
+        <!-- Polaroid 1: For slow mornings (Cappuccino) -->
+        <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform -rotate-2 hover:rotate-0">
+          <img src="assets/polaroid_1.png" alt="For slow mornings - Cappuccino ₹149" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+        </div>
+
+        <!-- Polaroid 2: For a little treat (Affogato) -->
+        <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform rotate-1.5 hover:rotate-0">
+          <img src="assets/polaroid_2.png" alt="For a little treat - Affogato ₹169" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+        </div>
+
+        <!-- Polaroid 3: For hot afternoons (Classic cold coffee) -->
+        <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform -rotate-1 hover:rotate-0">
+          <img src="assets/polaroid_3.png" alt="For hot afternoons - Classic cold coffee ₹139" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+        </div>
+
+        <!-- Polaroid 4: For deadline days (Espresso) -->
+        <div class="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2 transform rotate-2.5 hover:rotate-0">
+          <img src="assets/polaroid_4.png" alt="For deadline days - Espresso ₹79" class="w-full max-w-[250px] h-auto object-contain drop-shadow-xl">
+        </div>
+
+      </div>
+
+      <!-- MOBILE POLAROIDS (Matches Figma mobile_sec_4.png & mobile_sec_5.png: Vertical stack) -->
+      <div class="flex sm:hidden flex-col items-center gap-10 max-w-xs mx-auto">
+        <!-- 1: For slow mornings -->
+        <div class="w-full max-w-[260px] transform -rotate-2">
+          <img src="assets/polaroid_1.png" alt="For slow mornings" class="w-full h-auto drop-shadow-lg">
+        </div>
+        <!-- 2: For hot afternoons -->
+        <div class="w-full max-w-[260px] transform rotate-2">
+          <img src="assets/polaroid_3.png" alt="For hot afternoons" class="w-full h-auto drop-shadow-lg">
+        </div>
+        <!-- 3: For a little treat -->
+        <div class="w-full max-w-[260px] transform -rotate-1">
+          <img src="assets/polaroid_2.png" alt="For a little treat" class="w-full h-auto drop-shadow-lg">
+        </div>
+        <!-- 4: For deadline days -->
+        <div class="w-full max-w-[260px] transform rotate-2">
+          <img src="assets/polaroid_4.png" alt="For deadline days" class="w-full h-auto drop-shadow-lg">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. DOWNLOAD APP CTA SECTION                -->
+  <!-- ========================================== -->
+  <section class="bg-white py-14 sm:py-20 md:py-24 border-t border-neutral-100">
+    <div class="max-w-5xl mx-auto px-4">
+      
+      <!-- DESKTOP / TABLET (Side-by-side with large QR device card) -->
+      <div class="hidden sm:flex flex-row items-center justify-between gap-10 md:gap-14">
+        
+        <!-- Left: Copy & Store Buttons -->
+        <div class="w-1/2 text-left">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-black tracking-tight leading-tight mb-4">
+            Your coffee is<br>one tap away.
+          </h2>
+          <p class="text-xl text-neutral-800 font-medium mb-8">
+            Get the znow app and say hello to coffee.
+          </p>
+
+          <div class="flex items-center gap-4">
+            <a href="#download" onclick="openDownloadModal(); return false;" class="transition-transform duration-200 hover:scale-105 inline-block">
+              <img src="assets/badge_appstore.png" alt="Get the app on App Store" class="h-12 w-auto object-contain rounded-lg shadow-sm">
+            </a>
+            <a href="#download" onclick="openDownloadModal(); return false;" class="transition-transform duration-200 hover:scale-105 inline-block">
+              <img src="assets/badge_playstore.png" alt="Get the app on Google Play" class="h-12 w-auto object-contain rounded-lg shadow-sm">
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: QR Code Phone Card -->
+        <div class="w-1/2 flex justify-end">
+          <div class="w-full max-w-[280px] md:max-w-[300px] transform hover:scale-105 transition-transform duration-300">
+            <img src="assets/qr_card_transparent.png" alt="Scan QR code to get the Znow App" class="w-full h-auto object-contain drop-shadow-2xl">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MOBILE LAYOUT (Matches Figma mobile_sec_6.png): Headline -> Subtitle -> QR Card -> Google Play -> App Store -->
+      <div class="flex sm:hidden flex-col items-center text-center">
+        <h2 class="text-3xl font-extrabold text-black tracking-tight mb-2">
+          Your coffee is one tap away.
+        </h2>
+        <p class="text-base text-neutral-800 font-medium mb-6">
+          Get the znow app and say hello to coffee.
+        </p>
+
+        <!-- Centered QR Card -->
+        <div class="w-full max-w-[240px] mb-6">
+          <img src="assets/qr_card_transparent.png" alt="Scan QR code" class="w-full h-auto object-contain drop-shadow-xl">
+        </div>
+
+        <!-- Stacked Badges: Google Play on top, App Store below (Exact Figma mobile match) -->
+        <div class="flex flex-col gap-3 w-full max-w-[190px]">
+          <a href="#download" onclick="openDownloadModal(); return false;" class="block transition-transform hover:scale-105">
+            <img src="assets/badge_playstore.png" alt="Get the app on Google Play" class="w-full h-auto object-contain">
+          </a>
+          <a href="#download" onclick="openDownloadModal(); return false;" class="block transition-transform hover:scale-105">
+            <img src="assets/badge_appstore.png" alt="Get the app on App Store" class="w-full h-auto object-contain">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. FOOTER                                  -->
+  <!-- ========================================== -->
+  <footer class="bg-[#85c5e4] text-black pt-12 sm:pt-16 pb-10">
+    <div class="max-w-6xl mx-auto px-4">
+      
+      <!-- Top Bar: Logo | Coffee in Minutes -->
+      <div class="flex items-center gap-4 mb-10 sm:mb-14">
+        <img src="assets/znow_logo_transparent.png" alt="Znow" class="h-8 sm:h-10 w-auto object-contain">
+        <div class="h-8 w-[1.5px] bg-black/40"></div>
+        <span class="font-bold text-base sm:text-lg text-black tracking-tight leading-tight">
+          Coffee<br>in Minutes
+        </span>
+      </div>
+
+      <!-- 4 Columns of Links -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 sm:mb-16 text-sm sm:text-base">
+        
+        <!-- Column 1: Znow -->
+        <div>
+          <h4 class="font-extrabold text-black mb-3 sm:mb-4 text-base sm:text-lg">Znow</h4>
+          <ul class="space-y-2 font-medium text-neutral-900">
+            <li><a href="#careers" class="hover:underline transition">Careers</a></li>
+            <li><a href="#about" class="hover:underline transition">About Us</a></li>
+            <li><a href="#contact" class="hover:underline transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Legal -->
+        <div>
+          <h4 class="font-extrabold text-black mb-3 sm:mb-4 text-base sm:text-lg">Legal</h4>
+          <ul class="space-y-2 font-medium text-neutral-900">
+            <li><a href="#privacy" class="hover:underline transition">Privacy Policy</a></li>
+            <li><a href="#terms" class="hover:underline transition">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Follow us -->
+        <div>
+          <h4 class="font-extrabold text-black mb-3 sm:mb-4 text-base sm:text-lg">Follow us</h4>
+          <div class="flex items-center gap-3">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="w-8 h-8 flex items-center justify-center hover:opacity-75 transition">
+              <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="w-8 h-8 flex items-center justify-center hover:opacity-75 transition">
+              <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="w-8 h-8 flex items-center justify-center hover:opacity-75 transition">
+              <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 4: Get the app -->
+        <div>
+          <h4 class="font-extrabold text-black mb-3 sm:mb-4 text-base sm:text-lg">Get the app</h4>
+          <div class="space-y-2.5">
+            <a href="#download" onclick="openDownloadModal(); return false;" class="block transition-transform hover:scale-105">
+              <img src="assets/badge_appstore.png" alt="Download on App Store" class="h-10 w-auto object-contain">
+            </a>
+            <a href="#download" onclick="openDownloadModal(); return false;" class="block transition-transform hover:scale-105">
+              <img src="assets/badge_playstore.png" alt="Download on Google Play" class="h-10 w-auto object-contain">
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div class="border-t border-black/25 pt-6 sm:pt-8 text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal">
+        <p class="max-w-4xl">
+          By continuing past this page, you agree to our Terms of service, Cookie policy, Privacy policy and Content policies. All trademarks are properties of their respective owners. 2026 &copy; Znow Limited. All rights reserved
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- 9. DOWNLOAD APP MODAL                      -->
+  <!-- ========================================== -->
+  <div id="downloadModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative text-center transform transition-all duration-300 scale-95 opacity-0" id="modalBox">
+      <!-- Close button -->
+      <button onclick="closeDownloadModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center text-neutral-600 transition">
+        ✕
+      </button>
+
+      <!-- Modal Content -->
+      <img src="assets/znow_logo_transparent.png" alt="Znow" class="h-10 mx-auto mb-3">
+      <h3 class="text-2xl font-extrabold text-black mb-1">Get the Znow App</h3>
+      <p class="text-neutral-600 text-sm mb-6">Enjoy 10-minute fresh coffee delivery in Koramangala Bengaluru</p>
+
+      <!-- QR Code -->
+      <div class="bg-neutral-50 p-4 rounded-2xl border border-neutral-200 inline-block mb-6 shadow-inner">
+        <img src="assets/qr_card_transparent.png" alt="QR Code" class="w-40 h-auto mx-auto object-contain">
+      </div>
+
+      <!-- Download Buttons -->
+      <div class="flex flex-col gap-3">
+        <a href="https://znow.in" class="w-full py-3 bg-[#4cc5fd] hover:bg-[#38baf3] text-black font-extrabold rounded-full transition shadow-md">
+          Download Android APK
+        </a>
+        <div class="flex items-center justify-center gap-3 pt-2">
+          <img src="assets/badge_appstore.png" alt="App Store" class="h-9 w-auto">
+          <img src="assets/badge_playstore.png" alt="Play Store" class="h-9 w-auto">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Scripts -->
+  <script>
+    function openDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      const box = document.getElementById('modalBox');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        box.classList.remove('scale-95', 'opacity-0');
+        box.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+
+    function closeDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      const box = document.getElementById('modalBox');
+      box.classList.remove('scale-100', 'opacity-100');
+      box.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+    }
+
+    document.getElementById('downloadModal').addEventListener('click', function(e) {
+      if (e.target === this) closeDownloadModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDownloadModal();
+    });
+  </script>
+
+</body>
+</html>

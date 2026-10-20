@@ -1,0 +1,6 @@
+node_modules
+dist
+design_export
+.firebase
+.DS_Store
+*.log
